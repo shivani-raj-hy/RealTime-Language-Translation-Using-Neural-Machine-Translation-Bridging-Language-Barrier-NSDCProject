@@ -47,15 +47,4 @@ Output (Chinese): "你的名字是什么?"
 ✅ Implements Beam Search for better accuracy
 ✅ GPU acceleration with CUDA support
 
-📌 Future Enhancements
-🔹 Expand language support (e.g., Spanish, German)
-🔹 Deploy as an API or web app
-🔹 Improve translation fluency with fine-tuning
 
-📝 Contributors
-Vandhana – Model Training & Evaluation,
-Ridhin – Data Preprocessing & Tokenization,
-Shiva – Model Inference & Testing,
-Angel – UI & Documentation
-📜 License
-This project is licensed under the MIT License.
