@@ -1,50 +1,33 @@
-Real-Time Language Translation Using Neural Machine Translation (NMT)
-🚀 A multilingual translation model using the mT5 Transformer to break language barriers in real-time.
+# Neural-machine-translation-NMT
+![NMT](https://github.com/nageshsinghc4/Neural-machine-translation-NMT/blob/master/021519-pic2.png)
 
+Machine translation is a subfield of computational linguistics that is focused on the task of automatically converting source text in one language to text in another language.
 
+In machine translation, the input already consists of a series of symbols in some language, and the computer program must convert this into a series of symbols in a different language.
 
-📌 Overview
-This project implements a real-time translation system using the mT5-base model from Hugging Face. It can translate text between multiple languages, such as English (en), Japanese (ja), and Chinese (zh). The model is fine-tuned on a multilingual dataset and optimized for accurate translation.
+Neural machine translation (NMT) is a proposition to machine translation that uses an artificial neural network to predict the probability of a sequence of words, typically modeling whole sentences in a single integrated model.
 
+With the power of Neural networks, Neural Machine Translation (NMT) has emerged as the most powerful algorithm to perform this task. This state-of-the-art algorithm is an application of deep learning in which massive datasets of translated sentences are used to train a model capable of translating between any two languages.
 
-🚀 How It Works
-1️⃣ Tokenization
-The input text is first tokenized using the mT5-base tokenizer and preprocessed.
+Here, we will create a LSTM encoder-decoder model that will translate English sentences into their French-language counterparts using Keras and python.
 
-python
-Copy
-Edit
-input_ids = tokenizer.encode(
-    '<zh> Hello, how are you?', return_tensors="pt", padding=True, truncation=True
-)
-2️⃣ Model Inference
-The encoded input is passed through the mT5 model to generate the translation.
+The data set can be downloaded from [here](http://www.manythings.org/anki/).
 
-python
-Copy
-Edit
-output_tokens = model.generate(input_ids, num_beams=5)
-3️⃣ Decoding
-The generated output tokens are converted back into human readable text.
+For more information and step by step explaination, please the article on [www.theaidream.com](https://www.theaidream.com/post/how-ai-is-changing-personal-data-tracking) 
 
-python
-Copy
-Edit
-translated_text = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
-print("Translation:", translated_text)
-📊 Evaluation & Results
-The model was tested using BLEU and ROUGE scores for translation accuracy.
-Example output:
+## Predictions
+To test the performance we will randomly choose a sentence from the input_sentences list, retrieve the corresponding padded sequence for the sentence, and will pass it to the translate_sentence() method. The method will return the translated sentence.
+```
+i = np.random.choice(len(input_sentences))
+input_seq = encoder_input_sequences[i:i+1]
+translation = translate_sentence(input_seq)
+print('Input Language : ', input_sentences[i])
+print('Actual translation : ', output_sentences[i])
+print('French translation : ', translation)
+```
 
-css
-Copy
-Edit
-Input: "What is your name?"
-Output (Chinese): "你的名字是什么?"
-📌 Features
-✅ Supports English, Japanese, and Chinese
-✅ Uses mT5 Transformer for high-quality translation
-✅ Implements Beam Search for better accuracy
-✅ GPU acceleration with CUDA support
+**Results:**
 
+![Results](https://github.com/nageshsinghc4/Neural-machine-translation-NMT/blob/master/Screenshot%202020-10-16%20at%209.43.26%20AM.png)
 
+You can follow my kaggle kernel for [NMT with attention mechanism](https://www.kaggle.com/nageshsingh/neural-machine-translation-attention-mechanism) implementation.
